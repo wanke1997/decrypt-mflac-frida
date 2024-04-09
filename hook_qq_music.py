@@ -7,7 +7,7 @@ session = frida.attach("QQMusic.exe")
 script = session.create_script(open("hook_qq_music.js", "r", encoding="utf-8").read())
 script.load()
 
-output_dir = "output"
+output_dir = str(Path.home()) + "\\Music\\Mflac_output"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
